@@ -2,12 +2,20 @@
   "name": "vue-easy",
   "version": "0.0.2",
   "description": "> TODO: description",
-  "main": "index.js",
+  "main": "generators/create/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "__tests__"
   },
-  "keywords": [],
-  "author": "itcast-hsian <541510140@qq.com>",
+  "bin": {
+    "vue-easy": "bin/cli.js"
+  },
+  "keywords": [
+    "vue",
+    "vue-cli",
+    "vue-component",
+    "component"
+  ],
+  "author": "hsian",
   "license": "ISC",
   "homepage": "",
   "directories": {
@@ -18,6 +26,14 @@
     "lib"
   ],
   "dependencies": {
-    "mocha": "^8.1.2"
+    "camelcase-keys": "^6.2.2",
+    "change-case": "^4.1.1",
+    "debug": "^4.1.1",
+    "minimist": "^1.2.5",
+    "mocha": "^8.1.2",
+    "strong-globalize": "^6.0.4",
+    "validate-npm-package-name": "^3.0.0",
+    "yeoman-environment": "^2.10.3",
+    "yeoman-generator": "^4.11.0"
   }
 }

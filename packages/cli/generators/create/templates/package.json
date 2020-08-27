@@ -1,0 +1,12 @@
+{
+  "name": "templates",
+  "version": "0.0.1",
+  "description": "UI component",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "dev": "lance-service dev",
+    "build": "lance-service build"
+  },
+  "author": "",
+  "license": "ISC"
+}

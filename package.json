@@ -1,10 +1,16 @@
 {
   "name": "vue-easy-root",
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+  "scripts": {
+    "lint": "eslint --fix .",
+    "prettier": "prettier --write \"**/*.js\"",
+    "prettier:check": "prettier --check \"**/*.js\""
+  },
   "devDependencies": {
     "lerna": "^3.22.1"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^7.7.0",
+    "prettier": "^2.1.1"
   }
 }

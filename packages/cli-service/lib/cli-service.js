@@ -1,7 +1,7 @@
-'use strict';
+"use strict";
 
-module.exports = cliService; 
+module.exports = cliService;
 
 function cliService() {
-    // TODO
+	// TODO
 }

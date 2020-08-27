@@ -1,7 +1,7 @@
-'use strict';
+// "use strict";
 
-const cliService = require('..');
+// const cliService = require("..");
 
-describe('cli-service', () => {
-    it('needs tests');
-});
+// describe("cli-service", () => {
+// 	it("needs tests");
+// });
