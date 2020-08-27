@@ -1,0 +1,23 @@
+{
+  "name": "vue-easy",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "itcast-hsian <541510140@qq.com>",
+  "license": "ISC",
+  "homepage": "",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "mocha": "^8.1.2"
+  }
+}
