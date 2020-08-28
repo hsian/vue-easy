@@ -2,18 +2,29 @@
   "name": "vue-easy-service",
   "version": "0.0.2",
   "description": "> TODO: description",
-  "author": "itcast-hsian <541510140@qq.com>",
+  "author": "hsian",
   "homepage": "",
   "license": "ISC",
   "main": "lib/cli-service.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+  "bin": {
+    "vue-easy-service": "./index.js"
   },
-  "files": [
-    "lib"
-  ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest __tests__"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "fs-extra": "^9.0.1",
+    "jest": "^26.4.2",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "vue-loader": "^15.9.3",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.1",
+    "webpack-merge": "^5.1.2",
+    "webpack-node-externals": "^2.5.2"
+  },
+  "devDependencies": {
+    "cross-spawn": "^7.0.3",
+    "webpack-cli": "^3.3.12"
   }
 }

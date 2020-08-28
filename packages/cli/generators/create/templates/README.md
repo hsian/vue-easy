@@ -1,1 +1,1 @@
-UI component
+# <%= project.name %>

@@ -4,7 +4,7 @@
   "description": "> TODO: description",
   "main": "generators/create/index.js",
   "scripts": {
-    "test": "__tests__"
+    "test": "jest __tests__"
   },
   "bin": {
     "vue-easy": "bin/cli.js"
@@ -18,10 +18,6 @@
   "author": "hsian",
   "license": "ISC",
   "homepage": "",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
   "files": [
     "lib"
   ],
@@ -29,8 +25,8 @@
     "camelcase-keys": "^6.2.2",
     "change-case": "^4.1.1",
     "debug": "^4.1.1",
+    "jest": "^26.4.2",
     "minimist": "^1.2.5",
-    "mocha": "^8.1.2",
     "strong-globalize": "^6.0.4",
     "validate-npm-package-name": "^3.0.0",
     "yeoman-environment": "^2.10.3",

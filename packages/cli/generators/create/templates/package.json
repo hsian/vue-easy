@@ -1,12 +1,40 @@
 {
-  "name": "templates",
+  "name": "<%= project.name -%>",
   "version": "0.0.1",
-  "description": "UI component",
-  "main": ".eslintrc.js",
+  "description": "<%= project.description -%>",
+  "main": "lib/index.js",
   "scripts": {
-    "dev": "lance-service dev",
-    "build": "lance-service build"
+    "dev": "vue-easy-service dev",
+    "build": "vue-easy-service build",
+    "dist": "vue-easy-service dist",
+    "lint": "eslint --fix .",
+    "prettier": "prettier --write \"**/*.js\"",
+    "prettier:check": "prettier --check \"**/*.js\""
   },
+  "files": [
+    "lib",
+    "components",
+    "README.md"
+  ],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "vue-easy-service": "file:D:/node/vue-easy-root/packages/cli-service"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.2",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0",
+    "vue-loader": "^15.9.3",
+    "extract-loader": "^5.1.0",
+    "vue-template-compiler": "^2.6.12",
+    "webpack": "^4.44.1",
+    "eslint": "^7.7.0",
+    "prettier": "2.0.5"
+  }
 }
