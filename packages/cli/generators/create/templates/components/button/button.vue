@@ -1,10 +1,10 @@
 <template>
-    <button class="button">奇怪的按钮</button>
+    <button class="button">按钮组件示例</button>
 </template>
 
 <script>
 export default {
-    name: "le-button",
+    name: "button",
 }
 </script>
 

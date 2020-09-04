@@ -13,6 +13,16 @@ function setupGenerators() {
 		path.join(__dirname, "../generators/create"),
 		PREFIX + "create",
 	);
+
+	env.register(
+		path.join(__dirname, "../generators/add"),
+		PREFIX + "add",
+	);
+
+	env.register(
+		path.join(__dirname, "../generators/remove"),
+		PREFIX + "remove",
+	);
 	return env;
 }
 

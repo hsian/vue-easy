@@ -8,8 +8,7 @@ const chalk = require('chalk');
 const webpack = require('webpack');
 const fs = require('fs-extra');
 
-const paths = require('../config/paths');
-const webpackConfig = require('../config/webpack.config.prod');
+const webpackConfig = require('../config/webpack.production');
 const formatWebpackMessages = require('./utils/formatWebpackMessages');
 
 const compiler = webpack(webpackConfig);
@@ -21,7 +20,7 @@ console.log(
 
 function preCompiler(){
 	return new Promise((resolve, reject) => {
-		fs.emptyDirSync(paths.appBuild);
+		fs.emptyDirSync(path.resolve(process.cwd(), "dist"));
 		resolve();
 	})
 }

@@ -8,11 +8,13 @@ const webpack = require('webpack');
 const fs = require('fs-extra');
 
 const webpackConfig = require('../config/webpack.component');
-const webpackExtractConfig = require('../config/webpack.component.extract');
+const webpackEntryConfig = require('../config/webpack.component.entry');
+const webpackCompleteConfig = require('../config/webpack.component.complete');
 const formatWebpackMessages = require('./utils/formatWebpackMessages');
 
 const compiler = webpack(webpackConfig);
-const compilerExtract = webpack(webpackExtractConfig);
+const compilerEntry = webpack(webpackEntryConfig);
+const compilerComplete = webpack(webpackCompleteConfig);
 
 console.log(
 	chalk.cyan('Creating an optimized components build...')
@@ -65,7 +67,15 @@ function build(){
 
 function buildExtract(){
 	// build extract
-	compilerExtract.run((err, stats) => {
+	compilerEntry.run((err, stats) => {
+		printMessage(err, stats).then(() => {
+			buildComplete();
+		})
+	})
+}
+
+function buildComplete(){
+	compilerComplete.run((err, stats) => {
 		printMessage(err, stats).then(() => {
 			process.exit();
 		})

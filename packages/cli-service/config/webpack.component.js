@@ -3,11 +3,19 @@ const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const nodeExternals = require('webpack-node-externals');
 
-const Components = require(path.resolve(process.cwd(), './components/main'));
+const Components = require(
+    path.resolve(process.cwd(), 
+    './components/components.json')
+);
+const entries = {};
+
+Components.forEach(v => {
+    entries[v.name] = v.fullPath;
+})
 
 const webpackConfig = {
     mode: 'production',
-    entry: Components,
+    entry: entries,
     output: {
         path: path.resolve(process.cwd(), './lib'),
         publicPath: '/lib/',
@@ -28,15 +36,9 @@ const webpackConfig = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx$/,
                 exclude: /(node_modules)/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env'],
-                        plugins: ['@babel/plugin-transform-runtime']
-                    }
-                }
+                loader: 'babel-loader'
             },
             {
                 test: /\.vue$/,
@@ -47,9 +49,24 @@ const webpackConfig = {
                     }
                 }
             },
+            // {
+            //     test: /\.css$/,
+            //     loaders: ['style-loader', 'css-loader'] 
+            // },
             {
                 test: /\.css$/,
-                loaders: ['style-loader', 'css-loader'] 
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: "styles/[name].css",
+                    },
+                },
+                {
+                    loader: "extract-loader",
+                },
+                {
+                    loader: "css-loader",
+                }]  
             },
             {
                 test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
