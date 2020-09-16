@@ -1,19 +1,18 @@
-# 按钮
+# example-button
 
-例子
+### 组件展示
 
 ```html
 <template>
     <div class="content">
-      -- 组件展示 --
-      <Button/>
+      <exampleButton/>
     </div>
 </template>
 <script>
-  import Button from "./button.vue";
+  import exampleButton from "./example-button.vue"
   export default {
     components: {
-      Button
+      exampleButton
     }
   }
 </script>
@@ -23,7 +22,7 @@
 <!-- live-0-0.vue -->
 ```
 
-## 属性
+### 属性
 
 | 参数 | 说明 | 类型 | 默认值 |
 | ---- | ---- | ---- | ------ |

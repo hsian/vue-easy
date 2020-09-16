@@ -31,7 +31,7 @@ const webpackConfig = {
     }, nodeExternals()],
     stats: 'none',
     optimization: {
-        minimize: true
+        minimize: false
     },
     module: {
         rules: [

@@ -1,7 +1,6 @@
-
 import Components from "../../components/components.json";
 
-export default  {
+export default {
 	// home: {
 	// 	name: "首页",
 	// 	path: "/",
@@ -13,21 +12,19 @@ export default  {
 		component: "component",
 		groups: [
 			{
-                name: "基础组件",
-                list: Components
-                // {
-                //     "title": "按钮",
-                //     "name": "ve-button",
-                //     "path": "./components/button/index.js"
-                // }
-
-				// "list": [
-				// 	{
-				// 		"path": "/icon",
-				// 		"title": "图标 icon"
-				// 	}
-				// ]
-			}
-		]
-	}
-}
+				name: "准备",
+				list: [
+					{
+					    "title": "文档说明",
+					    "name": "",
+					    "path": "/statement"
+					}
+				]
+			},
+			{
+				name: "组件列表",
+				list: Components,
+			},
+		],
+	},
+};

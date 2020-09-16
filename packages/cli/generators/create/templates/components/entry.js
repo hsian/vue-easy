@@ -1,5 +1,5 @@
-import Button from "./button";
+import exampleButton from "./example-button";
 
 export default {
-    Button
+    exampleButton
 }

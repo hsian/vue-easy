@@ -1,9 +1,12 @@
 const BaseGenerator = require("../../lib/generator/base-generator");
 const path = require('path');
 const fs = require("fs");
+const _ = require("lodash");
 const utils = require('../../lib/utils');
 const cwd = process.cwd();
 const basePath = path.resolve(cwd, "components");
+const {kebabCase, camelCase} = _;
+
 
 module.exports = class ComponentGenerator extends BaseGenerator {
     constructor(args, opts){
@@ -118,6 +121,7 @@ module.exports = class ComponentGenerator extends BaseGenerator {
         ]
 
         return this.prompt(prompts).then(props => {
+            props.name = kebabCase(props.name);
             Object.assign(this.componentInfo, props);
         });
     }
@@ -168,7 +172,10 @@ module.exports = class ComponentGenerator extends BaseGenerator {
 
         // generator entry file
         const nameList = components.map(item => {
-            return item.name;
+            return {
+                name: item.name,
+                camelName: camelCase(item.name)
+            }
         });
         this._rewriteEntries(nameList);
     }   

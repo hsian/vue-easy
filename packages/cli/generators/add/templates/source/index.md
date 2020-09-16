@@ -2,7 +2,7 @@
 
 例子
 
-```html
+```js
 <template>
     <div class="content">
       -- 组件展示 --

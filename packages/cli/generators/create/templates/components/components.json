@@ -1,8 +1,8 @@
 [
     {
         "title": "按钮",
-        "name": "button",
-        "path": "/button",
-        "fullPath": "./components/button/index.js"
+        "name": "example-button",
+        "path": "/example-button",
+        "fullPath": "./components/example-button/index.js"
     }
 ]

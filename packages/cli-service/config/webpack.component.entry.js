@@ -10,7 +10,7 @@ const pkg = require(path.resolve(cwd, "package.json"));
 const externalsValue = {};
 
 Components.forEach(item => {
-    externalsValue[`./${item.name}`] = `${pkg.name}/components/${item.name}`
+    externalsValue[`./${item.name}`] = `${pkg.name}/lib/${item.name}`
 })
 externals = [
     Object.assign({
