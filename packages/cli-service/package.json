@@ -1,9 +1,9 @@
 {
   "name": "vue-easy-service",
-  "version": "0.1.1",
-  "description": "> TODO: description",
+  "version": "0.1.4",
+  "description": "vue-easy generator component serve",
   "author": "hsian",
-  "homepage": "",
+  "homepage": "https://github.com/hsian/vue-easy-service.git",
   "license": "ISC",
   "main": "lib/cli-service.js",
   "bin": {
@@ -27,12 +27,13 @@
     "webpack": "^4.44.1",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-merge": "^5.1.2",
-    "webpack-node-externals": "^2.5.2"
+    "webpack-node-externals": "^2.5.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "html-webpack-plugin": "^4.4.1",
+    "cross-spawn": "^7.0.3"
   },
   "devDependencies": {
-    "cross-spawn": "^7.0.3",
-    "html-webpack-plugin": "^4.4.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    
   }
 }

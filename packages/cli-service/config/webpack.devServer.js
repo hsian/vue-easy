@@ -3,7 +3,7 @@
 const webpackConfig = require('./webpack.development');
 
 const urlConfig = {
-  host: process.env.HOST || '0.0.0.0',
+  host: process.env.HOST || 'localhost',
   port: parseInt(process.env.PORT, 10) || 3000,
   protocol: process.env.HTTPS === 'true' ? 'https' : 'http'
 }

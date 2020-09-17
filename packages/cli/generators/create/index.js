@@ -60,7 +60,7 @@ module.exports = class AppGenerator extends ProjectGenerator {
 		this.log(g.f("Next steps:"));
 		this.log();
 		this.log("$ cd " + this.projectInfo.outdir);
-		this.log(`$ ${this.options.packageManager || "npm"} start`);
+		this.log(`npm run dev`);
 		this.log();
 	}
 };

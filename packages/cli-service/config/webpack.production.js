@@ -1,36 +1,54 @@
 'use strict'
 
 const path = require("path");
-const {merge} = require('webpack-merge')
+const { merge } = require('webpack-merge')
 const webpack = require('webpack');
 const { webpackConfig } = require("./webpack.common");
-const MiniCssExtractPlugin  = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = merge(webpackConfig, {
 	mode: 'production',
-	output:{
-  		pathinfo: false,
-		path: path.resolve(process.cwd(), "dist"),  
+	output: {
+		pathinfo: false,
+		path: path.resolve(process.cwd(), "dist"),
 		filename: `js/[name].js`,
 		chunkFilename: 'vendors/js/[name].chunk.js',
 		publicPath: `/`
-  	},
+	},
 	devtool: "none",
 	module: {
 		rules: [
 			{
 				test: /\.css?$/,
 				use: [
-			  		MiniCssExtractPlugin.loader, 
-			  		'css-loader'
+					MiniCssExtractPlugin.loader,
+					'css-loader'
 				]
-			}, {
+			},
+			{
+				test: /\.less$/,
+				use: [
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+					},
+					{
+						loader: 'less-loader',
+						options: {
+							lessOptions: {
+								strictMath: true,
+							},
+						},
+					},
+				],
+			},
+			{
 				test: /\.styl(us)?$/,
 				use: [
-		  			MiniCssExtractPlugin.loader, 
-		  			'css-loader', 
-		  			'stylus-loader'
+					MiniCssExtractPlugin.loader,
+					'css-loader',
+					'stylus-loader'
 				]
 			}
 		]
@@ -38,13 +56,13 @@ module.exports = merge(webpackConfig, {
 	plugins: [
 		new MiniCssExtractPlugin({
 			// Options similar to the same options in webpackOptions.output
-      		// both options are optional
-      		filename: 'css/[name].[contenthash:8].css',
-      		chunkFilename: 'css/[name].chunk.css',
+			// both options are optional
+			filename: 'css/[name].[contenthash:8].css',
+			chunkFilename: 'css/[name].chunk.css',
 		}),
 		new ManifestPlugin({
-	    	fileName: 'asset-manifest.json',
-	    }),
+			fileName: 'asset-manifest.json',
+		}),
 		new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 	]
 

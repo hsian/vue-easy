@@ -1,7 +1,7 @@
 {
   "name": "vue-easy",
-  "version": "0.1.1",
-  "description": "> TODO: description",
+  "version": "0.1.4",
+  "description": "Quick vue component generation",
   "main": "generators/create/index.js",
   "scripts": {
     "test": "jest __tests__"
@@ -17,10 +17,7 @@
   ],
   "author": "hsian",
   "license": "ISC",
-  "homepage": "",
-  "files": [
-    "lib"
-  ],
+  "homepage": "https://github.com/hsian/vue-easy.git",
   "dependencies": {
     "camelcase-keys": "^6.2.2",
     "change-case": "^4.1.1",

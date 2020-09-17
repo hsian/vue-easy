@@ -194,6 +194,11 @@ module.exports = class ProjectGenerator extends BaseGenerator {
 			},
 		);
 
+		this.fs.move(
+            this.destinationPath(`package.json.ejs`),
+            this.destinationPath(`package.json`),
+        );
+
 		// generate .yo-rc.json configure file
 		this.config.save();
 	}

@@ -69,6 +69,24 @@ const webpackConfig = {
                 }]  
             },
             {
+                test: /\.less$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: "styles/[name].css",
+                    },
+                },
+                {
+                    loader: "extract-loader",
+                },
+                {
+                    loader: "css-loader",
+                },
+                {
+                    loader: 'less-loader',
+                }]  
+            },
+            {
                 test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
                 loader: 'url-loader',
                 query: {
