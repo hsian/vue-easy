@@ -90,7 +90,7 @@ npm install babel-plugin-import
 
 `babel.config.js`
 
-```
+```js
 module.exports = {
   plugins: [
     [
@@ -119,7 +119,7 @@ module.exports = {
 </template>
 
 <script>
-import myInput from "app-component";
+import {myInput} from "app-component";
 
 export default {
   components: {
